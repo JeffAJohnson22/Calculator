@@ -1,9 +1,9 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
+
 import './App.css';
 import Output from './Components/Output'
 
-function App() {
+const App = () => {
   return (
     <div className="App">
 <Output/>
