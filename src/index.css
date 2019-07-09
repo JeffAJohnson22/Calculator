@@ -1,0 +1,77 @@
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+ */
+
+
+ *,* ::before, *::after{
+   box-sizing: border-box;
+   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+    font-weight: normal;
+ }
+
+  body{
+    padding:0;
+    margin:0;
+    background: linear-gradient(to right, #00ddf0, #cccccc)
+  }
+
+  .calculator-grid{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px,auto) repeat(5, 100px )
+  }
+
+  .calculator-grid > button{
+    cursor:pointer;
+    font-size: 2em;
+    border: 1px solid white;
+    outline:none;
+    background-color: blue
+  }
+
+  .calculator-grid >button:hover{
+    background-color: green;
+  }
+
+  .span-two{
+    grid-column: span 2;
+  }
+
+  .output{
+    grid-column: 1/-1;
+    background-color: gold; 
+    display: flex;
+    align-self: flex-end;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+
+  .output .previousNumber{
+    color:red;
+    font-size: 1.5em
+  }
+
+
+  .output .currentNumber{
+    color:red;
+    font-size: 1.5em
+  }
