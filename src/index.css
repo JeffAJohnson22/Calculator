@@ -25,10 +25,10 @@ code {
   body{
     padding:0;
     margin:0;
-    background: linear-gradient(to right, #00ddf0, #cccccc)
+    background: linear-gradient(to right, #00ddf0, #5409aa)
   }
 
-  .calculator-grid{
+  #calculator-grid{
     display: grid;
     justify-content: center;
     align-content: center;
@@ -37,7 +37,7 @@ code {
     grid-template-rows: minmax(120px,auto) repeat(5, 100px )
   }
 
-  .calculator-grid > button{
+  #calculator-grid > button{
     cursor:pointer;
     font-size: 2em;
     border: 1px solid white;
@@ -45,33 +45,33 @@ code {
     background-color: blue
   }
 
-  .calculator-grid >button:hover{
+  #calculator-grid > button:hover{
     background-color: green;
   }
 
-  .span-two{
+  #span-two{
     grid-column: span 2;
   }
 
-  .output{
+  #output{
     grid-column: 1/-1;
     background-color: gold; 
     display: flex;
     align-self: flex-end;
     justify-content: space-between;
     flex-direction: column;
-    padding: 10px;
+    padding: 20px;
     word-wrap: break-word;
     word-break: break-all;
   }
 
-  .output .previousNumber{
+  #output #previousNumber{
     color:red;
     font-size: 1.5em
   }
 
 
-  .output .currentNumber{
+  #output #currentNumber{
     color:red;
     font-size: 1.5em
   }
