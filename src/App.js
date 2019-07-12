@@ -9,15 +9,19 @@ import './App.css'
 
 const App = (props) => {
 
- const [result, setResult] = useState([''])
+ const [result, setResult] = useState('')
  const [equal, setEqual] = useState(0)
 
 
+ 
+
   let buttonPressed = (buttonValue) =>{
+
     setResult(result + buttonValue)
-    console.log('result', result)
-    if(buttonValue === '='){
+ 
+    if( buttonValue === '='){
       calculate()
+      console.log('v')
     }  else if(buttonValue === 'AC' ){
      reset()
     } else if(buttonValue === 'DEL' ){
@@ -26,7 +30,37 @@ const App = (props) => {
      }
   }
 
-  let backspace = () =>{
+  const calculate = () =>{
+    try{
+    
+      return setResult(eval(result))
+    }
+  catch (e) {
+  
+         return setResult('error')
+      }
+ }
+
+
+ try {
+   
+ } catch (error) {
+   
+ }
+  // const calculate = () =>{
+ 
+  //   try {
+  
+  //    return eval(result)
+  
+  //   } catch (e) {
+  
+  //      return setResult('error')
+  //   }
+    
+  //   }
+
+   const backspace = () =>{
     result().slice(0, -1)
   }
 
@@ -35,19 +69,12 @@ const App = (props) => {
   }
 
 
-  let calculate = () =>{
-   try {
-    setResult().eval((result)|| '')
-   } catch (e) {
-    setResult('error')
-   }
-   
-   }
+ 
 
 
   return (
     <div className="App">
-      <Output answer = {result}/>
+      <Output answer = {result} {...props}/>
       <Keypad buttonPressed = {buttonPressed}/>
     </div>
   );
