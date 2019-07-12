@@ -5,72 +5,52 @@ import Output from './Components/Output'
 import Keypad from './Components/Keypad'
 
 import './App.css'
-// import { reset } from 'ansi-colors';
+
 
 const App = (props) => {
 
  const [result, setResult] = useState('')
- const [equal, setEqual] = useState(0)
 
-
- 
 
   let buttonPressed = (buttonValue) =>{
 
     setResult(result + buttonValue)
- 
+//  console.log({result})
     if( buttonValue === '='){
       calculate()
-      console.log('v')
-    }  else if(buttonValue === 'AC' ){
-     reset()
-    } else if(buttonValue === 'DEL' ){
-      console.log('hello',buttonValue)
+    } else if (buttonValue === 'DEL' ){
+      // console.log(buttonValue)
       backspace()
-     }
+     }else if(buttonValue === 'AC' ){
+     reset()
+    } 
   }
 
-  const calculate = () =>{
-    try{
+const calculate = () =>{
+  try{
     
-      return setResult(eval(result))
-    }
+    // eslint-disable-next-line no-eval
+    return setResult(eval(result))
+  }
   catch (e) {
-  
-         return setResult('error')
-      }
- }
-
-
- try {
-   
- } catch (error) {
-   
- }
-  // const calculate = () =>{
- 
-  //   try {
-  
-  //    return eval(result)
-  
-  //   } catch (e) {
-  
-  //      return setResult('error')
-  //   }
-    
-  //   }
-
-   const backspace = () =>{
-    result().slice(0, -1)
+    return setResult('error')
   }
+}
 
-  const reset = () =>{
-    setResult('') 
-  }
+const reset = () =>{
+  setResult('') 
+}
 
+const backspace = () =>{
+  // console.log('result here', result)
+let back = result.substr(0,result.length -1)
+console.log('back', back)
+return setResult(back)
 
- 
+  
 
+  // return  setResult(result + buttonValue).slice(-1, 1)
+}
 
   return (
     <div className="App">

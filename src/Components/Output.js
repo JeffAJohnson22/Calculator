@@ -7,12 +7,9 @@ const Output = (props) => {
 
   return (
     <div id= 'output-grid'>
-
       <div id='output'>
-      {/* <div id='previousNumber'> </div> */}
-      <div id='currentNumber'> <p>{props.answer}</p></div>
+        <div id='currentNumber'> <p>{props.answer}</p></div>
       </div>
-      
     </div>
 
   )

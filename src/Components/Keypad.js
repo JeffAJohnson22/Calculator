@@ -2,7 +2,7 @@ import React from 'react'
 import '../index.css'
 
 const Keypad = (props) =>{
-// console.log('keypad props', props)
+// console.log('keypad props',(props))
  let buttonPressed = e =>{
    props.buttonPressed(e.target.value || e.target.name)
  };
@@ -24,7 +24,7 @@ const Keypad = (props) =>{
   <button value={7} onClick={buttonPressed} >7</button>
   <button value={8} onClick={buttonPressed} >8</button>
   <button value={9} onClick={buttonPressed} >9</button>
-  <button  id='subtract' >-</button>
+  <button name='-' onClick={buttonPressed}  id='subtract' >-</button>
   <button name='.' onClick={buttonPressed}>.</button>  
   <button value={0} onClick={buttonPressed} >0</button>
   <button name='=' onClick={buttonPressed} id='span-two'>=</button>
